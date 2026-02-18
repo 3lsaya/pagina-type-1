@@ -1,0 +1,14 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Node modules (if any)
+node_modules/
+npm-debug.log
+
+# IDE settings
+.vscode/
+.idea/
+.claude/
+.agent/

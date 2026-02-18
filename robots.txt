@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://typegroup.com.co/sitemap.xml
+
+# Type Group - Equipos Industriales Colombia
+# typegroup.com.co
