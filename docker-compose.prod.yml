@@ -32,6 +32,8 @@ services:
         - traefik.http.routers.typegroup.priority=1
         - traefik.http.routers.typegroup.tls.certresolver=letsencryptresolver
         - traefik.http.routers.typegroup.service=typegroup
+        # Middleware añadido
+        - traefik.http.routers.typegroup.middlewares=typegroup-redirect
         - traefik.http.services.typegroup.loadbalancer.server.port=80
         - traefik.http.services.typegroup.loadbalancer.passHostHeader=true
         ## Redirect www to non-www
