@@ -4,14 +4,12 @@ services:
   ## --------------------------- ORION --------------------------- ##
 
   typegroup_web:
-    # Usamos la imagen construida automáticamente por GitHub Actions
     image: ghcr.io/3lsaya/pagina-type-1:latest
 
-    # Eliminamos 'build' porque Docker Swarm no soporta building en tiempo de despliegue
-    # build: ... 
-
-    volumes:
-      - typegroup_nginx_config:/etc/nginx/conf.d:ro ## Configuración de Nginx externa
+    # Eliminamos el volumen de configuración para usar la config por defecto de Nginx inside la imagen.
+    # Esto evita problemas si no tienes archivos de configuración personalizados listos.
+    # volumes:
+    #   - typegroup_nginx_config:/etc/nginx/conf.d:ro 
 
     networks:
       - sayanet
@@ -43,10 +41,11 @@ services:
 
 ## --------------------------- ORION --------------------------- ##
 
-volumes:
-  typegroup_nginx_config:
-    external: true
-    name: typegroup_nginx_config
+# Eliminamos la sección de volumes porque ya no la usamos
+# volumes:
+#   typegroup_nginx_config:
+#     external: true
+#     name: typegroup_nginx_config
 
 networks:
   sayanet:
