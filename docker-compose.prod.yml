@@ -4,18 +4,17 @@ services:
   ## --------------------------- ORION --------------------------- ##
 
   typegroup_web:
-    # Ahora usamos la imagen construida desde el repositorio en lugar de la imagen base de nginx
-    image: typegroup-web:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # Usamos la imagen construida automáticamente por GitHub Actions
+    image: ghcr.io/3lsaya/pagina-type-1:latest
+
+    # Eliminamos 'build' porque Docker Swarm no soporta building en tiempo de despliegue
+    # build: ... 
 
     volumes:
-      # - typegroup_html:/usr/share/nginx/html:ro ## COMENTADO: El código ahora vive DENTRO de la imagen (Docker way)
-      - typegroup_nginx_config:/etc/nginx/conf.d:ro ## Configuración de Nginx externa (se mantiene)
+      - typegroup_nginx_config:/etc/nginx/conf.d:ro ## Configuración de Nginx externa
 
     networks:
-      - sayanet ## Nome da rede interna
+      - sayanet
 
     deploy:
       mode: replicated
@@ -37,7 +36,7 @@ services:
         - traefik.http.routers.typegroup.service=typegroup
         - traefik.http.services.typegroup.loadbalancer.server.port=80
         - traefik.http.services.typegroup.loadbalancer.passHostHeader=true
-        ## Redirect www to non-www (opcional)
+        ## Redirect www to non-www
         - traefik.http.middlewares.typegroup-redirect.redirectregex.regex=^https://www\.(.*)
         - traefik.http.middlewares.typegroup-redirect.redirectregex.replacement=https://$${1}
         - traefik.http.middlewares.typegroup-redirect.redirectregex.permanent=true
@@ -51,6 +50,5 @@ volumes:
 
 networks:
   sayanet:
-    ## Nome da rede interna
     external: true
-    name: sayanet ## Nome da rede interna
+    name: sayanet
