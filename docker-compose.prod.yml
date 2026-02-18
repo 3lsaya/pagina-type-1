@@ -1,0 +1,56 @@
+version: "3.7"
+services:
+
+  ## --------------------------- ORION --------------------------- ##
+
+  typegroup_web:
+    # Ahora usamos la imagen construida desde el repositorio en lugar de la imagen base de nginx
+    image: typegroup-web:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      # - typegroup_html:/usr/share/nginx/html:ro ## COMENTADO: El código ahora vive DENTRO de la imagen (Docker way)
+      - typegroup_nginx_config:/etc/nginx/conf.d:ro ## Configuración de Nginx externa (se mantiene)
+
+    networks:
+      - sayanet ## Nome da rede interna
+
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+      labels:
+        - traefik.enable=true
+        ## Dominio principal
+        - traefik.http.routers.typegroup.rule=Host(`typegroup.com.co`) || Host(`www.typegroup.com.co`)
+        - traefik.http.routers.typegroup.entrypoints=websecure
+        - traefik.http.routers.typegroup.priority=1
+        - traefik.http.routers.typegroup.tls.certresolver=letsencryptresolver
+        - traefik.http.routers.typegroup.service=typegroup
+        - traefik.http.services.typegroup.loadbalancer.server.port=80
+        - traefik.http.services.typegroup.loadbalancer.passHostHeader=true
+        ## Redirect www to non-www (opcional)
+        - traefik.http.middlewares.typegroup-redirect.redirectregex.regex=^https://www\.(.*)
+        - traefik.http.middlewares.typegroup-redirect.redirectregex.replacement=https://$${1}
+        - traefik.http.middlewares.typegroup-redirect.redirectregex.permanent=true
+
+## --------------------------- ORION --------------------------- ##
+
+volumes:
+  typegroup_nginx_config:
+    external: true
+    name: typegroup_nginx_config
+
+networks:
+  sayanet:
+    ## Nome da rede interna
+    external: true
+    name: sayanet ## Nome da rede interna
