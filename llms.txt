@@ -1,0 +1,30 @@
+# Type Group
+
+> Type Group es un distribuidor colombiano de equipos industriales de la marca
+> Reyson, con sede en Medellín, Antioquia. Atiende los sectores de minería,
+> construcción y agricultura en toda Colombia desde 2022.
+
+## Información de la empresa
+
+- **Nombre:** Type Group
+- **Marca distribuida:** Reyson
+- **Fundada:** 2022
+- **Sede:** Carrera 71 #16-04, Belén Las Playas, Medellín, Antioquia, Colombia
+- **Teléfono:** +57 305 327 0131
+- **Email:** ventas@typegroup.com.co
+- **Cobertura:** Nacional (Colombia)
+- **Sectores:** Minería, construcción, agricultura, industria general
+
+## Productos principales
+
+- [Martillo Neumático ML33 Reyson](https://typegroup.com.co/productos/martillo-ml33.html) — 2000 BPM, 5.5 kg, pistón 32 mm, compatible con repuestos La Cruz
+- [Bombas Centrífugas de Alta Presión](https://typegroup.com.co/productos/bombas-de-alta.html) — 7 modelos (80-32 a 250-40), norma BS EN 733 / DIN 24255, eje inoxidable
+- [Cable de Acero Alquitranado 6×19](https://typegroup.com.co/productos/cable-de-acero.html) — Diámetros 1/2" a 1", núcleo IWRC, para izaje y minería
+- [Compresor Industrial](https://typegroup.com.co/productos/compresor.html) — Compatible con Martillo ML33, 400 CFM, 210 PSI, motor Cummins 160 HP
+
+## Páginas clave
+
+- [Inicio](https://typegroup.com.co/)
+- [Nosotros](https://typegroup.com.co/nosotros.html)
+- [Distribuidores](https://typegroup.com.co/distribuidores.html)
+- [Contacto](https://typegroup.com.co/contacto.html)

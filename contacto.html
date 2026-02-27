@@ -1,15 +1,37 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto — Type Group Colombia</title>
+    <title>Contacto | Type Group Colombia — Equipos Industriales</title>
     <meta name="description"
-        content="Contáctanos por WhatsApp, email o visítanos en Medellín. Type Group: equipos industriales Reyson. +57 305 327 0131. Atención 24/7.">
-    <link rel="canonical" href="https://typegroup.com.co/contacto.html">
+        content="Contáctanos por WhatsApp, teléfono o email. Type Group, Carrera 71 #16-04, Medellín. Atención de lunes a viernes y soporte 24/7 por WhatsApp.">
+    <link rel="canonical" href="https://typegroup.com.co/contacto.html" />
+    <link rel="alternate" hreflang="es-CO" href="https://typegroup.com.co/contacto.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://typegroup.com.co/contacto.html" />
+    <meta property="og:title"       content="Contacto — Type Group Colombia" />
+    <meta property="og:description" content="Carrera 71 #16-04, Medellín. WhatsApp 24/7: +57 305 327 0131." />
+    <meta property="og:image"       content="https://typegroup.com.co/assets/Imagenes/Logos/typegroup/logo%20negro.png" />
+    <meta property="og:locale"      content="es_CO" />
+    <meta property="og:site_name"   content="Type Group" />
+    <meta name="twitter:card"       content="summary_large_image" />
+
     <link rel="icon" type="image/png" href="assets/Imagenes/Logos/typegroup/icono negro.png">
     <link rel="stylesheet" href="css/styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://typegroup.com.co/" },
+        { "@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://typegroup.com.co/contacto.html" }
+      ]
+    }
+    </script>
     <style>
         .contact-layout {
             display: grid;
@@ -117,6 +139,7 @@
                 <a href="productos/martillo-ml33.html">Martillo ML33</a>
                 <a href="productos/bombas-de-alta.html">Bombas</a>
                 <a href="productos/cable-de-acero.html">Cables</a>
+                <a href="productos/compresor.html">Compresor</a>
                 <a href="distribuidores.html">Distribuidores</a>
                 <a href="contacto.html" class="active">Contacto</a>
             </div>
@@ -139,6 +162,9 @@
         <a href="index.html">Inicio</a>
         <a href="nosotros.html">Nosotros</a>
         <a href="productos/martillo-ml33.html">Martillo ML33</a>
+        <a href="productos/bombas-de-alta.html">Bombas de Alta</a>
+        <a href="productos/cable-de-acero.html">Cable de Acero</a>
+        <a href="productos/compresor.html">Compresor</a>
         <a href="distribuidores.html">Distribuidores</a>
         <a href="contacto.html">Contacto</a>
         <a href="https://wa.me/573053270131" target="_blank" class="btn btn-green">📲 WhatsApp</a>
@@ -152,7 +178,7 @@
             <nav class="breadcrumb"><a href="index.html">Inicio</a><span>›</span><span>Contacto</span></nav>
             <div style="max-width:600px;">
                 <p class="label" style="margin-bottom:16px;">Estamos para ayudarte</p>
-                <h1 style="color:var(--white); margin-bottom:16px;">Contáctanos</h1>
+                <h1 style="color:var(--white); margin-bottom:16px;">Contáctanos — Type Group Colombia</h1>
                 <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7;">
                     La forma más rápida de contactarnos es por WhatsApp. Respondemos en minutos, 24 horas al día, 7 días
                     a la semana.
@@ -267,6 +293,12 @@
                                 <textarea id="contact-mensaje" name="mensaje" class="form-textarea"
                                     placeholder="Cuéntanos qué necesitas..." rows="4"></textarea>
                             </div>
+                            <div class="form-group" style="margin-bottom:16px;">
+                                <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; color:var(--text-muted); font-size:0.85rem; line-height:1.5;">
+                                    <input type="checkbox" name="consentimiento" required style="margin-top:3px; flex-shrink:0;">
+                                    <span>Acepto la <a href="politica-de-privacidad.html" target="_blank" style="color:var(--green);">Política de Privacidad</a> y autorizo el tratamiento de mis datos personales.</span>
+                                </label>
+                            </div>
                             <button type="submit" class="btn btn-green btn-lg"
                                 style="width:100%; justify-content:center;">
                                 <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -332,7 +364,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 Type Group. Todos los derechos reservados.</p><a href="index.html">typegroup.com.co</a>
+                <p>© 2026 Type Group. Todos los derechos reservados.</p><a href="politica-de-privacidad.html">Política de Privacidad</a>
             </div>
         </div>
     </footer>
